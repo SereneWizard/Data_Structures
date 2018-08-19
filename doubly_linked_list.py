@@ -32,7 +32,6 @@ class DLL(object):
             self.head.set_next(new_node)
         self.head = new_node
 
-
     @property
     def len(self):
         current = self.head
@@ -41,8 +40,6 @@ class DLL(object):
             count += 1
             current = current.get_previous()
         return count
-
-
 
     def get_previous(self, val):
         current = self.head
@@ -56,7 +53,6 @@ class DLL(object):
             current = current.get_previous()
         raise ValueError ("The value does not exist")
 
-
     def get_next(self, val):
         current = self.head
         while current:
@@ -68,9 +64,7 @@ class DLL(object):
                     return None
             current = current.get_previous()
         raise ValueError ("The value does not exist")
-
-
-   
+ 
     def add_previous(self, existval, newval):
         current = self.head 
         while current:
@@ -101,7 +95,6 @@ class DLL(object):
             current = current.get_previous()
         raise ValueError ("The value does not exist")
     
-
     def previous(self):
         current = self.head
         while current:
