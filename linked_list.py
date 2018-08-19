@@ -23,6 +23,7 @@ class LinkedList(object):
         new_node.set_next(self.head)
         self.head = new_node
 
+    @property
     def len(self):
         current = self.head
         count = 0
@@ -56,6 +57,14 @@ class LinkedList(object):
             last = current
             current = current.get_next()
         raise ValueError('The value does not exist')
+
+    def next(self):
+        current = self.head
+        while current:
+            yield current.get()
+            current = current.get_next()
+        
+
             
 
 
@@ -66,3 +75,5 @@ if __name__ == "__main__":
     a.insert(10)
     a.insert(7)
     a.insert(3)
+    for i in a.next():
+        print(i)
